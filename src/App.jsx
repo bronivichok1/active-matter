@@ -1,6 +1,6 @@
-import React, { useEffect, useState, cloneElement, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './App.css';
+import React, { useEffect, useState, cloneElement, useRef} from 'react';
+import { Links, useNavigate } from 'react-router-dom';
+import './CSS/App.css';
 
 function App() {
 
@@ -37,8 +37,8 @@ function App() {
   }
 
 
-  const headerButton = (label) => (
-    <button key={label} onClick={() => navigate(`/?num=${label}`)} className="button-header">
+  const headerButton = (label, number) => (
+    <button key={label} onClick={() => navigate(`/${number}`)} className="button-header">
       {label}
     </button>
   );
@@ -53,7 +53,7 @@ function App() {
 
     return Object.keys(buttonNames)
       .sort((a, b) => Number(a) - Number(b))
-      .map((key) => headerButton(buttonNames[key]));
+      .map((key) => headerButton(buttonNames[key],key));
   };
 
   const headerButtonMapsRender = (buttonNames, style) => {
@@ -82,19 +82,20 @@ function App() {
             </select>
           </div>
         </div>
-        <div>
+     {/*<div>
           {headerButtonMapsRender(buttonMapsNames,"button-header")}
         </div>
         <div>
           {headerButtonMapsRender(buttonDangerMapsNames,"button-header")}
-        </div>
+        </div>*/}
       </header>
-      <div className='conteiner'>
-        <div className='carousel-conteiner'>
+      <div className='container'>
+        <div className='carousel-container'>
+          {Carousel(buttonMapsNames)}
           {Carousel(buttonMapsNames)}
         </div>
-        <div aria-hidden className='carousel-conteiner'>
-          {Carousel(buttonMapsNames)}
+        <div aria-hidden='true' className='carousel-container'>
+          
         </div>
       </div>
     </div>
