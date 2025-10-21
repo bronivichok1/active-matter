@@ -6,7 +6,7 @@ function System() {
 
 
 return(
-<div>
+<div className='systeam-page'>
 
 </div>
 );

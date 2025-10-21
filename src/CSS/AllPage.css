@@ -1,0 +1,42 @@
+.systeam-page{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.2)),url('../Images/systeam.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+    
+.maps-container {
+    background-color: rgb(29, 26, 26);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px; /* Расстояние между карточками */
+    padding: 16px;
+  }
+  
+.map-card {
+    width: calc(33% - 11px); 
+    height: 250px; 
+    background-size: cover; 
+    background-position: center; 
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+.map-card:hover {
+    transform: scale(1.05); 
+  }
+  
+.map-card h3 {
+    color: white;
+    text-align: center; 
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-bottom: 16px;
+    padding: 0 16px; 
+  }

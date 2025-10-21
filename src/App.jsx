@@ -6,27 +6,28 @@ function App() {
 
   const navigate = useNavigate();
 
-  const buttonNames = {
-    "0":'Карты',
-    "1":'Магазин',
-    "2":'Поддержка',
-    "3":'Системные требования',
-    "4":'Таблица патронов',
-    "5":'Новости',
-    "6":'Тир-листы',
-    "7":'Важные-предметы',
-    "8":'Карта квестов',
-    "9":'Мерч',
-  }
-  const buttonMapsNames = {
-    "0":'Щегольское',
-    "1":'Щегольское: Буйные заросли',
-    "2":'Озерное',
-    "3":'Грузовой порт',
-    "4":'Военная база: Безмолвные',
-    "5":'Штаб',
-    "6":'Завод: Улей',
-  }
+  const buttonNames = [
+    { id: 0, title: 'Карты' },
+    { id: 1, title: 'Магазин' },
+    { id: 2, title: 'Поддержка' },
+    { id: 3, title: 'Системные требования' },
+    { id: 4, title: 'Таблица патронов' },
+    { id: 5, title: 'Новости' },
+    { id: 6, title: 'Тир-листы' },
+    { id: 7, title: 'Важные предметы' },
+    { id: 8, title: 'Карта квестов' },
+    { id: 9, title: 'Мерч' },
+  ];
+
+  const buttonMapsNames = [
+    { id: 0, title: 'Щегольское', format: 'jpg' },
+    { id: 1, title: 'Щегольское: Буйные заросли', format: 'webp' },
+    { id: 2, title: 'Озерное', format: 'jpg' },
+    { id: 3, title: 'Грузовой порт', format: 'webp' },
+    { id: 4, title: 'Военная база: Безмолвные', format: 'jpg' },
+    { id: 5, title: 'Штаб', format: 'png' },
+    { id: 6, title: 'Завод: Улей', format: 'webp' },
+  ];
 
   const buttonDangerMapsNames = {
     "1":'Щегольское: Буйные заросли',
@@ -49,25 +50,37 @@ function App() {
     </button>
   );
   
-  const headerButtonRender = (buttonNames) => {
-
-    return Object.keys(buttonNames)
-      .sort((a, b) => Number(a) - Number(b))
-      .map((key) => headerButton(buttonNames[key],key));
+  const headerButtonRender = (buttons) => {
+    return buttons.map((button) => (
+      <button
+        key={button.id}
+        onClick={() => navigate(`/${button.id}`)}
+        className="button-header"
+      >
+        {button.title}
+      </button>
+    ));
   };
 
-  const headerButtonMapsRender = (buttonNames, style) => {
-
-    return Object.keys(buttonNames)
-      .sort((a, b) => Number(a) - Number(b))
-      .map((key) => headerButtonMaps(buttonNames[key], style));
+  const headerButtonMapsRender = (buttons) => {
+    return buttons.map((button) => (
+      <button key={button.id} className="button-header">
+        {button.title}
+      </button>
+    ));
   };
 
   const Carousel = (maps) => {
-      return Object.keys(maps).map((key) => <div className='carousel'>
-            {maps[key]}
-            </div>) 
-  }
+    return maps.map((map) => (
+      <div
+        key={map.id}
+        className="carousel"
+        style={{ backgroundImage: `url(/mapsPred/map${map.id}.${map.format})` }}
+      >
+        <h3>{map.title}</h3>
+      </div>
+    ));
+  };
 
   return (
     <div className="App">
