@@ -17,8 +17,9 @@ root.render(
       <Route path='*' element={<App/>}/>
       <Route path='/0' element={<Maps/>}/>
       <Route path='/1' element={<ErrorPage/>}/>
-      <Route path='/4' element={<Table/>}/>
+      <Route path='/2' element={<ErrorPage/>}/>
       <Route path='/3' element={<System/>}/>
+      <Route path='/4' element={<ErrorPage/>}/>
       <Route path='/5' element={<ErrorPage/>}/>
       <Route path='/6' element={<ErrorPage/>}/>
       <Route path='/7' element={<Items/>}/>
