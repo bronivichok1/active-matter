@@ -6,31 +6,36 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
 .App-header{
-  background-color:rgba(0,0,0,0.8);
-  height: 15vh;
+  background-color:rgba(0,0,0,1);
+  height: 10vh;
   width: 100vw;
 }
-  body{
+
+body{
     overflow-x: hidden;
   }
+
 .button-header{
   color: rgb(228, 228, 228);
-  margin: 6px;
-  background-color: rgba(0,0,0,0.8);
+  margin-left: 0.5vw;
+  margin-top: 2.5vh;
+  background-color: rgba(0,0,0,0.0);
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   border: none;
 }
 
 .button-header:hover {
-  text-shadow:rgb(255, 255, 255) 0 0 20px;
   text-decoration: underline rgb(255, 255, 255);
+  transform: translateY(1px);
+  text-underline-offset: 3px;
 }
 
 .button-header:active {
-  transform: translateY(1px);
+  transform: translateY(2px);
 }
 
 .select-header{

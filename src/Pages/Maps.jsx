@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../CSS/AllPage.css';
+import Header from '../Components/Header';
 
 function Maps() {
   const navigate = useNavigate();
@@ -23,17 +24,20 @@ function Maps() {
 
 
   return (
-    <div className="maps-container">
-      {MapsArray.map((map) => (
-        <div
-          key={map.id}
-          className="map-card"
-          style={{ backgroundImage: `url(/maps/map${map.id}.${map.format})` }}
-          onClick={() => handleCardClick(map.id)}
-        >
-          <h3>{map.title}</h3>
+    <div className='maps-fon'>
+        <Header/>
+        <div className="maps-container">
+        {MapsArray.map((map) => (
+            <div
+            key={map.id}
+            className="map-card"
+            style={{ backgroundImage: `url(/maps/map${map.id}.${map.format})` }}
+            onClick={() => handleCardClick(map.id)}
+            >
+            <h3>{map.title}</h3>
+            </div>
+        ))}
         </div>
-      ))}
     </div>
   );
 }

@@ -9,20 +9,20 @@ import Maps from './Pages/Maps';
 import HelpPage from './Pages/HelpPage';
 import Table from './Pages/Table';
 import System from './Pages/System';
-
+import ErrorPage from './Pages/ErrorPage';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<App/>}/>
+      <Route path='*' element={<App/>}/>
       <Route path='/0' element={<Maps/>}/>
-      <Route path='/1' element={<HelpPage/>}/>
+      <Route path='/1' element={<ErrorPage/>}/>
       <Route path='/4' element={<Table/>}/>
       <Route path='/3' element={<System/>}/>
-      <Route path='/5' element={<Items/>}/>
-      <Route path='/6' element={<Items/>}/>
+      <Route path='/5' element={<ErrorPage/>}/>
+      <Route path='/6' element={<ErrorPage/>}/>
       <Route path='/7' element={<Items/>}/>
-      <Route path='/8' element={<Items/>}/>
+      <Route path='/8' element={<ErrorPage/>}/>
     </Routes>
   </BrowserRouter>
 );
