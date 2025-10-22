@@ -7,11 +7,11 @@ function Items() {
 
   const navigate = useNavigate();
   const ItemsArray = [
-    { id: 1, name: 'Меч', price: 100, text: 'Острый меч для ближнего боя', img: '/images/sword.jpg', type: 'оружие' },
-    { id: 2, name: 'Щит', price: 80, text: 'Прочный щит для защиты', img: '/images/shield.jpg', type: 'броня' },
-    { id: 3, name: 'Лук', price: 120, text: 'Мощный лук для дальних атак', img: '/images/bow.jpg', type: 'оружие' },
-    { id: 4, name: 'Зелье здоровья', price: 50, text: 'Восстанавливает здоровье', img: '/images/potion.jpg', type: 'зелье' },
-    { id: 5, name: 'Кольчуга', price: 200, text: 'Лёгкая броня для защиты', img: '/images/armor.jpg', type: 'броня' },
+    { id: 1, name: 'Шлем КВР',rare:'обычный' , price: 165, text: '', type: 'броня', priceInReid:'419-700',Chronotraces:35},
+    { id: 2, name: 'Подсумки новобранца',rare:'обычный' , price: 165, text: '', type: 'броня', priceInReid:'419-700',Chronotraces:35},
+    { id: 3, name: 'Шлем КВР',rare:'обычный' , price: 165, text: '', type: 'броня', priceInReid:'419-700',Chronotraces:35},
+    { id: 4, name: 'Шлем КВР',rare:'обычный' , price: 165, text: '', type: 'броня', priceInReid:'419-700',Chronotraces:35},
+    { id: 5, name: 'Шлем КВР',rare:'обычный' , price: 165, text: '', type: 'броня', priceInReid:'419-700',Chronotraces:35},
   ];
 
   // Состояния для поиска и фильтрации
@@ -103,13 +103,15 @@ function Items() {
               className="item-summary"
               onClick={() => handleExpand(item.id)}
             >
-              <img src={item.img} alt={item.name} className="item-image" />
+              <img src={'/items/'+item.id+'.jpg'} alt={item.name} className="item-image" />
               <h3>{item.name}</h3>
             </div>
             {expandedCard === item.id && (
               <div className="item-details">
-                <p>Цена: {item.price} монет</p>
                 <p>Тип: {item.type}</p>
+                <p>Цена: {item.price} монет</p>
+                <p>Цена обогащённого: {item.priceInReid} монет</p>
+                <p>Хроноследы обогащённого: {item.Chronotraces} </p>
                 <p>{item.text}</p>
               </div>
             )}
