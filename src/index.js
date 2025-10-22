@@ -10,6 +10,9 @@ import HelpPage from './Pages/HelpPage';
 import Table from './Pages/Table';
 import System from './Pages/System';
 import ErrorPage from './Pages/ErrorPage';
+import Zavod from './Pages/ZavodPage';
+import Shtab from './Pages/ShtabPage';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
@@ -24,6 +27,8 @@ root.render(
       <Route path='/6' element={<ErrorPage/>}/>
       <Route path='/7' element={<Items/>}/>
       <Route path='/8' element={<ErrorPage/>}/>
+      <Route path='/maps/zavod' element={<Zavod/>}/>
+      <Route path='/maps/shtab' element={<Shtab/>}/>
     </Routes>
   </BrowserRouter>
 );

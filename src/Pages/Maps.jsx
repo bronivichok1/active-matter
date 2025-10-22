@@ -5,7 +5,6 @@ import Header from '../Components/Header';
 
 function Maps() {
   const navigate = useNavigate();
-  const link = '../Image/maps/map'
   const MapsArray = [
     { id: 0, title: 'Щегольское', format: 'jpg' },
     { id: 1, title: 'Щегольское: Буйные заросли', format: 'jpg' },
@@ -18,8 +17,7 @@ function Maps() {
 
   const handleCardClick = (id) => {
     console.log(`Карточка с id ${id} была нажата`);
-    // Здесь можно добавить логику перехода на другую страницу
-    // navigate(`/map/${id}`); // Пример использования навигации
+     //navigate(`/map/?number=${id}`); 
   };
 
 
