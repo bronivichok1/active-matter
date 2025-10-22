@@ -20,15 +20,16 @@ function App() {
   ];
 
   const buttonMapsNames = [
-    { id: 0, title: 'Щегольское', format: 'jpg' },
-    { id: 1, title: 'Щегольское: Буйные заросли', format: 'webp' },
-    { id: 2, title: 'Озерное', format: 'jpg' },
-    { id: 3, title: 'Грузовой порт', format: 'webp' },
-    { id: 4, title: 'Военная база: Безмолвные', format: 'jpg' },
-    { id: 5, title: 'Штаб', format: 'png' },
-    { id: 6, title: 'Завод: Улей', format: 'webp' },
+    { id: 0, title: 'Щегольское', format: 'jpg', name:'zavod' },
+    { id: 1, title: 'Побег из Догорска', format: 'webp',name:'zavod' },
+    { id: 2, title: 'Озерное', format: 'jpg',name:'zavod' },
+    { id: 3, title: 'Грузовой порт', format: 'webp',name:'zavod' },
+    { id: 4, title: 'Военная база: Безмолвные', format: 'jpg',name:'zavod' },
+    { id: 5, title: 'Штаб', format: 'png',name:'shtab' },
+    { id: 6, title: 'Завод: Улей', format: 'webp',name:'zavod' },
+    { id: 7, title: 'Свалка: Полночь', format: 'webp',name:'zavod' },
   ];
-
+/* 
   const buttonDangerMapsNames = {
     "1":'Щегольское: Буйные заросли',
     "3":'Побег из Догорска',
@@ -49,6 +50,15 @@ function App() {
       {label} 
     </button>
   );
+
+  const headerButtonMapsRender = (buttons) => {
+    return buttons.map((button) => (
+      <button key={button.id} className="button-header">
+        {button.title}
+      </button>
+    ));
+  };
+  */
   
   const headerButtonRender = (buttons) => {
     return buttons.map((button) => (
@@ -62,23 +72,25 @@ function App() {
     ));
   };
 
-  const headerButtonMapsRender = (buttons) => {
-    return buttons.map((button) => (
-      <button key={button.id} className="button-header">
-        {button.title}
-      </button>
-    ));
-  };
+
+  const handleCardClick = (name) => {
+
+    navigate(`/maps/` + name); 
+    };
 
   const Carousel = (maps) => {
     return maps.map((map) => (
-      <div
+     
+      <button
         key={map.id}
         className="carousel"
         style={{ backgroundImage: `url(/mapsPred/map${map.id}.${map.format})` }}
+        onClick={() => handleCardClick(map.name)}
       >
         <h3>{map.title}</h3>
-      </div>
+      </button>
+
+      
     ));
   };
 

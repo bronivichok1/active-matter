@@ -6,18 +6,18 @@ import Header from '../Components/Header';
 function Maps() {
   const navigate = useNavigate();
   const MapsArray = [
-    { id: 0, title: 'Щегольское', format: 'jpg' },
-    { id: 1, title: 'Щегольское: Буйные заросли', format: 'jpg' },
-    { id: 2, title: 'Озерное', format: 'jpg' },
-    { id: 3, title: 'Грузовой порт', format: 'png' },
-    { id: 4, title: 'Военная база: Безмолвные', format: 'jpg' },
-    { id: 5, title: 'Штаб', format: 'jpg' },
-    { id: 6, title: 'Завод: Улей', format: 'png' },
+    { id: 0, title: 'Щегольское', format: 'jpg', name:'zavod' },
+    { id: 1, title: 'Свалка: Полночь', format: 'jpg', name:'zavod' },
+    { id: 2, title: 'Озерное', format: 'jpg', name:'zavod' },
+    { id: 3, title: 'Грузовой порт', format: 'png', name:'zavod' },
+    { id: 4, title: 'Военная база: Безмолвные', format: 'jpg', name:'zavod' },
+    { id: 5, title: 'Штаб', format: 'jpg', name:'shtab' },
+    { id: 6, title: 'Завод: Улей', format: 'png', name:'zavod' },
   ];
 
-  const handleCardClick = (id) => {
-    console.log(`Карточка с id ${id} была нажата`);
-     //navigate(`/map/?number=${id}`); 
+  const handleCardClick = (name) => {
+
+  navigate(`/maps/` + name); 
   };
 
 
@@ -30,7 +30,7 @@ function Maps() {
             key={map.id}
             className="map-card"
             style={{ backgroundImage: `url(/maps/map${map.id}.${map.format})` }}
-            onClick={() => handleCardClick(map.id)}
+            onClick={() => handleCardClick(map.name)}
             >
             <h3>{map.title}</h3>
             </div>

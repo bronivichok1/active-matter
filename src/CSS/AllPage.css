@@ -49,36 +49,22 @@
     padding: 0 16px; 
   }
 
-.back-button{
-    color: rgb(228, 228, 228);
-    margin-top: 2.5vh;
-    margin-left: 2.5vw;
-    background-color: rgba(0,0,0,0.0);
-    border-radius: 2px;
-    font-size: 18px;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    border: none;
-  }
-  
-  .back-button:hover {
-    text-decoration: underline rgb(255, 255, 255);
-    text-underline-offset: 3px;
-    transform: translateY(1px);
-  }
-  
-  .back-button:active {
-    transform: translateY(1px);
-  }
 
   .items-container {
     padding: 20px;
+    min-height: 95vh;
+    height: 100%;
     font-family: Arial, sans-serif;
+    background-color: #2a2a2a;
   }
   
   .search-bar {
     display: flex;
     gap: 16px;
     margin-bottom: 20px;
+    background-color: #2a2a2a;
+    width: 80vw;
+
   }
   
   .search-bar input {
@@ -106,6 +92,7 @@
     margin-bottom: 20px;
   }
   
+
   .price-filters {
     display: flex;
     gap: 16px;
@@ -122,6 +109,7 @@
   .type-filters {
     display: flex;
     gap: 16px;
+    color: rgb(223, 223, 223);
   }
   
   .type-filters label {
@@ -138,12 +126,17 @@
   }
   
   .item-card {
+    font-size: 18px;
     width: 250px;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
     transition: box-shadow 0.2s ease-in-out;
+    background-color: #ffffff;
+    border-color: black;
+    background-color: rgb(65, 60, 60);
+    color:rgb(223, 223, 223);;
   }
   
   .item-card:hover {
@@ -173,14 +166,14 @@
   
   .item-details {
     padding: 16px;
-    background-color: #f9f9f9;
+    background-color: rgb(65, 60, 60);
     border-top: 1px solid #ccc;
   }
   
   .item-details p {
     margin: 0;
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color:rgb(223, 223, 223);;
   }
 
   .page-404 {

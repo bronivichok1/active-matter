@@ -52,10 +52,13 @@ body{
   height: 20vh;
   margin-right: 30px;
   background-color: aliceblue;
-  font-size: 18px;
+  font-size: 20px;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   flex-shrink: 0;
   background-size: cover;
+  border: 5px none;
+  border-color: black;
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 
 .carousel-container{
